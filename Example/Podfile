@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'UITextField_AutoSuggestion_Example' do
+  pod 'UITextField_AutoSuggestion', :path => '../'
+
+  target 'UITextField_AutoSuggestion_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  end
+end
