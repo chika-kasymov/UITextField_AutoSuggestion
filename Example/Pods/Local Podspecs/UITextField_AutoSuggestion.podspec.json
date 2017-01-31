@@ -1,0 +1,22 @@
+{
+  "name": "UITextField_AutoSuggestion",
+  "version": "0.1.0",
+  "summary": "A short description of UITextField_AutoSuggestion.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/UITextField_AutoSuggestion",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Kassymov Shyngys": "chika.kasymov@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/UITextField_AutoSuggestion.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "UITextField_AutoSuggestion/Classes/**/*"
+}

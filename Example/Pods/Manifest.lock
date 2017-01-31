@@ -1,0 +1,22 @@
+PODS:
+  - Expecta (1.0.5)
+  - Specta (1.0.5)
+  - UITextField_AutoSuggestion (0.1.0)
+
+DEPENDENCIES:
+  - Expecta
+  - Specta
+  - UITextField_AutoSuggestion (from `../`)
+
+EXTERNAL SOURCES:
+  UITextField_AutoSuggestion:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
+  Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
+  UITextField_AutoSuggestion: d810d5a34e1b404ef2f640d35ae73ec10d4679f5
+
+PODFILE CHECKSUM: e65e3cca5e50e78c6d9d2dc90dc41f6b44388896
+
+COCOAPODS: 1.1.1

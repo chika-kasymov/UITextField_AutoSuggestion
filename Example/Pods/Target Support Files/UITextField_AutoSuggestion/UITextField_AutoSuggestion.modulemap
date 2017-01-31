@@ -1,0 +1,6 @@
+framework module UITextField_AutoSuggestion {
+  umbrella header "UITextField_AutoSuggestion-umbrella.h"
+
+  export *
+  module * { export * }
+}
