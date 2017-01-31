@@ -5,11 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/UITextField_AutoSuggestion.svg?style=flat)](http://cocoapods.org/pods/UITextField_AutoSuggestion)
 [![Platform](https://img.shields.io/cocoapods/p/UITextField_AutoSuggestion.svg?style=flat)](http://cocoapods.org/pods/UITextField_AutoSuggestion)
 
+![Final auto suggestion feature](auto_suggestion.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+* iOS version >= **8.0**
 
 ## Installation
 

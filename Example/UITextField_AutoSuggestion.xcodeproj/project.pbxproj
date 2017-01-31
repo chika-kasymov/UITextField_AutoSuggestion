@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30DF7EB9C4465E151187AD45 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		52D852DF58B54FA4C38E8318 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		30DF7EB9C4465E151187AD45 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		52D852DF58B54FA4C38E8318 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		58E41ED70CD7ACDB595C4E0E /* Pods-UITextField_AutoSuggestion_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITextField_AutoSuggestion_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITextField_AutoSuggestion_Tests/Pods-UITextField_AutoSuggestion_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* UITextField_AutoSuggestion_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITextField_AutoSuggestion_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,7 +65,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		790CDBBE6E63137CA367B45D /* Pods_UITextField_AutoSuggestion_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITextField_AutoSuggestion_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A47CEA4B126EFC37D054CB64 /* UITextField_AutoSuggestion.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = UITextField_AutoSuggestion.podspec; path = ../UITextField_AutoSuggestion.podspec; sourceTree = "<group>"; };
+		A47CEA4B126EFC37D054CB64 /* UITextField_AutoSuggestion.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UITextField_AutoSuggestion.podspec; path = ../UITextField_AutoSuggestion.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DFBA7189DF110CF12D88FC63 /* Pods-UITextField_AutoSuggestion_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITextField_AutoSuggestion_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITextField_AutoSuggestion_Example/Pods-UITextField_AutoSuggestion_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -527,6 +527,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UITextField_AutoSuggestion/UITextField_AutoSuggestion-Prefix.pch";
 				INFOPLIST_FILE = "UITextField_AutoSuggestion/UITextField_AutoSuggestion-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,6 +543,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UITextField_AutoSuggestion/UITextField_AutoSuggestion-Prefix.pch";
 				INFOPLIST_FILE = "UITextField_AutoSuggestion/UITextField_AutoSuggestion-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
