@@ -34,11 +34,12 @@
     self.textField1.delegate = self;
     self.textField1.autoSuggestionDataSource = self;
     self.textField1.fieldIdentifier = MONTH_ID;
+    self.textField1.showImmediately = true;
     [self.textField1 observeTextFieldChanges];
     self.textField2.delegate = self;
     self.textField2.autoSuggestionDataSource = self;
-    [self.textField2 observeTextFieldChanges];
     self.textField2.fieldIdentifier = WEEK_ID;
+    [self.textField2 observeTextFieldChanges];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,8 +82,12 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         }
         
-        NSPredicate *filterPredictate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", text];
-        NSArray *months = [MONTHS filteredArrayUsingPredicate:filterPredictate];
+        NSArray *months = MONTHS;
+        
+        if (text.length > 0) {
+            NSPredicate *filterPredictate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", text];
+            months = [MONTHS filteredArrayUsingPredicate:filterPredictate];
+        }
         
         cell.textLabel.text = months[indexPath.row];
         
@@ -106,6 +111,10 @@
 
 - (NSInteger)autoSuggestionField:(UITextField *)field tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section forText:(NSString *)text {
     if ([field.fieldIdentifier isEqualToString:MONTH_ID]) {
+        if (text.length == 0) {
+            return MONTHS.count;
+        }
+        
         NSPredicate *filterPredictate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", text];
         NSInteger count = [MONTHS filteredArrayUsingPredicate:filterPredictate].count;
         return count;
@@ -128,8 +137,12 @@
     NSLog(@"Selected suggestion at index row - %ld", (long)indexPath.row);
     
     if ([field.fieldIdentifier isEqualToString:MONTH_ID]) {
-        NSPredicate *filterPredictate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", text];
-        NSArray *months = [MONTHS filteredArrayUsingPredicate:filterPredictate];
+        NSArray *months = MONTHS;
+        
+        if (text.length > 0) {
+            NSPredicate *filterPredictate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", text];
+            months = [MONTHS filteredArrayUsingPredicate:filterPredictate];
+        }
         
         self.textField1.text = months[indexPath.row];
     } else {

@@ -28,11 +28,12 @@
 @property (nonatomic, strong) UIView *tableAlphaView;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (nonatomic, strong) UIView *alphaView;
-@property BOOL autoSuggestionIsShowing;
-@property CGRect textFieldRectOnWindow;
-@property CGRect keyboardFrameBeginRect;
+@property (nonatomic) BOOL autoSuggestionIsShowing;
+@property (nonatomic) CGRect textFieldRectOnWindow;
+@property (nonatomic) CGRect keyboardFrameBeginRect;
 @property (nonatomic, strong) NSString *fieldIdentifier;
-@property NSInteger maxNumberOfRows;
+@property (nonatomic) NSInteger maxNumberOfRows;
+@property (nonatomic) BOOL showImmediately;
 
 - (void)observeTextFieldChanges;
 - (void)setLoading:(BOOL)loading;

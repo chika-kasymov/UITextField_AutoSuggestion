@@ -23,6 +23,7 @@ static char keyboardFrameBeginRectKey;
 
 - (void)observeTextFieldChanges {
     self.layer.masksToBounds = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAutoSuggestion:) name:UITextFieldTextDidBeginEditingNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toggleAutoSuggestion:) name:UITextFieldTextDidChangeNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideAutoSuggestion) name:UITextFieldTextDidEndEditingNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -61,7 +62,7 @@ static char keyboardFrameBeginRectKey;
 #pragma mark - Helpers
 
 - (void)toggleAutoSuggestion:(NSNotification *)notification {
-    if (self.text.length > 0) {
+    if (self.text.length > 0 || self.showImmediately) {
         [self showAutoSuggestion];
         
         if ([self.autoSuggestionDataSource respondsToSelector:@selector(autoSuggestionField:textChanged:)]) {
@@ -355,6 +356,14 @@ static char keyboardFrameBeginRectKey;
 
 - (void)setMaxNumberOfRows:(NSInteger)maxNumberOfRows {
     objc_setAssociatedObject(self, @selector(maxNumberOfRows), @(maxNumberOfRows), OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (BOOL)showImmediately {
+    return [objc_getAssociatedObject(self, @selector(showImmediately)) boolValue];
+}
+
+- (void)setShowImmediately:(BOOL)showImmediately {
+    objc_setAssociatedObject(self, @selector(showImmediately), @(showImmediately), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
