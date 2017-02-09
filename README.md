@@ -13,7 +13,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-* iOS version >= **8.0**
+* **Xcode >= 7**
+* **iOS >= 8.0**
 
 ## Installation
 
