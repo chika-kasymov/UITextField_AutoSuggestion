@@ -235,7 +235,7 @@ static char keyboardFrameBeginRectKey;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.autoSuggestionDataSource && [self.autoSuggestionDataSource respondsToSelector:@selector(autoSuggestionField:tableView:heightForRowAtIndexPath:forText:)]) {
-        [self.autoSuggestionDataSource autoSuggestionField:self tableView:tableView heightForRowAtIndexPath:indexPath forText:self.text];
+        return [self.autoSuggestionDataSource autoSuggestionField:self tableView:tableView heightForRowAtIndexPath:indexPath forText:self.text];
     }
     
     return DEFAULT_ROW_HEIGHT;
