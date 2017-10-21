@@ -138,12 +138,16 @@ static char keyboardFrameBeginRectKey;
 
 - (void)checkForEmptyState {
     if ([self tableView:self.tableView numberOfRowsInSection:0] == 0) {
-        UILabel *emptyTableLabel = [[UILabel alloc] initWithFrame:self.tableView.bounds];
-        emptyTableLabel.textAlignment = NSTextAlignmentCenter;
-        emptyTableLabel.font = [UIFont systemFontOfSize:16];
-        emptyTableLabel.textColor = [UIColor grayColor];
-        emptyTableLabel.text = @"No matches";
-        self.tableView.backgroundView = emptyTableLabel;
+        if (self.emptyView) {
+            UILabel *emptyTableLabel = [[UILabel alloc] initWithFrame:self.tableView.bounds];
+            emptyTableLabel.textAlignment = NSTextAlignmentCenter;
+            emptyTableLabel.font = [UIFont systemFontOfSize:16];
+            emptyTableLabel.textColor = [UIColor grayColor];
+            emptyTableLabel.text = @"No matches";
+            self.tableView.backgroundView = emptyTableLabel;
+        } else {
+            self.tableView.backgroundView = self.emptyView;
+        }
     } else {
         self.tableView.backgroundView = nil;
     }
@@ -294,6 +298,14 @@ static char keyboardFrameBeginRectKey;
 
 - (void)setTableAlphaView:(UIView *)tableAlphaView {
     objc_setAssociatedObject(self, @selector(tableAlphaView), tableAlphaView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIView *)emptyView {
+    return objc_getAssociatedObject(self, @selector(emptyView));
+}
+
+- (void)setEmptyView:(UIView *)emptyView {
+    objc_setAssociatedObject(self, @selector(emptyView), emptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIActivityIndicatorView *)spinner {

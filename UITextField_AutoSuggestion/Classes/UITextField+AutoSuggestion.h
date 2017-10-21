@@ -23,11 +23,14 @@
 @interface UITextField (AutoSuggestion)
 
 @property (weak, nonatomic) id<UITextFieldAutoSuggestionDataSource> autoSuggestionDataSource;
+
 @property (nonatomic, strong) UIView *tableContainerView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *tableAlphaView;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (nonatomic, strong) UIView *alphaView;
+@property (nonatomic, strong) UIView *emptyView;
+
 @property (nonatomic) BOOL autoSuggestionIsShowing;
 @property (nonatomic) CGRect textFieldRectOnWindow;
 @property (nonatomic) CGRect keyboardFrameBeginRect;
