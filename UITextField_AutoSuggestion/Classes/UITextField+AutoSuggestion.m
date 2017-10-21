@@ -62,7 +62,7 @@ static char keyboardFrameBeginRectKey;
 #pragma mark - Helpers
 
 - (void)toggleAutoSuggestion:(NSNotification *)notification {
-    if (self.text.length > 0 || self.showImmediately) {
+    if (self.showImmediately || (self.text.length > 0 && self.text.length >= self.minCharsToShow)) {
         [self showAutoSuggestion];
         
         if ([self.autoSuggestionDataSource respondsToSelector:@selector(autoSuggestionField:textChanged:)]) {
@@ -364,6 +364,14 @@ static char keyboardFrameBeginRectKey;
 
 - (void)setShowImmediately:(BOOL)showImmediately {
     objc_setAssociatedObject(self, @selector(showImmediately), @(showImmediately), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSInteger)minCharsToShow {
+    return [objc_getAssociatedObject(self, @selector(minCharsToShow)) integerValue];
+}
+
+- (void)setMinCharsToShow:(NSInteger)minCharsToShow {
+    objc_setAssociatedObject(self, @selector(minCharsToShow), @(minCharsToShow), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

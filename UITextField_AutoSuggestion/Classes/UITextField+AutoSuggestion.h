@@ -34,6 +34,7 @@
 @property (nonatomic, strong) NSString *fieldIdentifier;
 @property (nonatomic) NSInteger maxNumberOfRows;
 @property (nonatomic) BOOL showImmediately;
+@property (nonatomic) NSInteger minCharsToShow;
 
 - (void)observeTextFieldChanges;
 - (void)setLoading:(BOOL)loading;

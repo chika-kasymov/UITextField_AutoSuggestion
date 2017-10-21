@@ -36,9 +36,11 @@
     self.textField1.fieldIdentifier = MONTH_ID;
     self.textField1.showImmediately = true;
     [self.textField1 observeTextFieldChanges];
+
     self.textField2.delegate = self;
     self.textField2.autoSuggestionDataSource = self;
     self.textField2.fieldIdentifier = WEEK_ID;
+    self.textField2.minCharsToShow = 3;
     [self.textField2 observeTextFieldChanges];
 }
 
