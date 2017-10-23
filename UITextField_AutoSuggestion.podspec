@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UITextField_AutoSuggestion'
-  s.version          = '0.2.1'
+  s.version          = '0.3.0'
   s.summary          = 'This is a category for UITextField which provides auto suggestion feature to any instance.'
 
 # This description is used to generate tags and improve search results.
