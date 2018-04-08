@@ -138,7 +138,7 @@ static char keyboardFrameBeginRectKey;
 
 - (void)checkForEmptyState {
     if ([self tableView:self.tableView numberOfRowsInSection:0] == 0) {
-        if (self.emptyView) {
+        if (!self.emptyView) {
             UILabel *emptyTableLabel = [[UILabel alloc] initWithFrame:self.tableView.bounds];
             emptyTableLabel.textAlignment = NSTextAlignmentCenter;
             emptyTableLabel.font = [UIFont systemFontOfSize:16];
